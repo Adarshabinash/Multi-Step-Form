@@ -1,0 +1,15 @@
+For react hook forms, our main target remains the name property which for whole elements will apply our validation.
+Usually, we tend to make forms using the onChange method inside the input but react form hook is a better way to make forms.
+We install react-hook-form from the react library and then import it from on the top. Then, in our function we destructure register method using useForm which will register our values in the form.
+We can assign default values to our useForm by using defaultValues:{} and inside the curley bracket, we have to use the names of our inputs and assign a default value. in most cases, "".
+Remember to use the defaultValues inside a curley bracket inside the useForms.
+In the input forms, we use {...register(name)} to use the register method.
+We also import the handleSubmit method from the react hook form to save our input data. It will take a callback with a parameter that will operate on our data.
+We can add other validations from our form hook inside the register method, after name using comma.
+We can handle the error by importing the formState after register method and using "{errors}" for catching errors and then logging it to the console.
+It is considered a good practice that using a paragraph tag below our each inputs and there making a code for the errors like- {errors.name?.message}. This will display the errors if any exists.
+Now, we have to install yup for a better validation method. Then we have to import * as yup for our validation purpose.
+With yup, we make a schema in which we decide how our validation should look like and how it should respond to the anomalies.
+In schema, we make yup.object().shape() which will take the names we register and will apply the validations to it.
+Remember to use the yup validation above the useForm call in the function.
+To use the validation in the form, we have to add the validation in a resolver and the resolver will be placed inside the useForm(). The resolver will check the validation status. Again, resolver should be inside the curley bracket.
